@@ -1,0 +1,22 @@
+.upload-container {
+    padding: 30px;
+    border-radius: 20px;
+    width: 500px;
+    border: 4px dashed #43434343;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.upload-image-logo {
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.scan-button {
+    color: #434343 !important;
+    background-color: #fa8900 !important;
+    font-size: 24px !important;
+    text-transform: none !important;
+}
