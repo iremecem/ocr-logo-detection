@@ -1,27 +1,30 @@
 import React, { Component } from 'react'
-import Skeleton from '@material-ui/lab/Skeleton';
+
+import { Skeleton } from 'primereact/skeleton';
+
+import './OcrResultSkeleton.css'
 
 export default class OcrResultSkeleton extends Component {
     render() {
         return (
             <div style={{marginLeft: '50px', marginTop: '50px'}}>
-                <Skeleton width={200}></Skeleton>
+                <Skeleton className="skeleton" width="200px" borderRadius="16px"></Skeleton>
                 <br/>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={260}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={260}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={260}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={300}></Skeleton>
-                <Skeleton width={240}></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton"width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="240px" borderRadius="16px"></Skeleton>
                 <br/>
-                <Skeleton width={200}></Skeleton>
-                <Skeleton width={160}></Skeleton>
+                <Skeleton className="skeleton" width="200px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="160px" borderRadius="16px"></Skeleton>
             </div>
         )
     }

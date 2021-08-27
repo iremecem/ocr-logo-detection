@@ -1,4 +1,8 @@
 .upload-container {
+  
+}
+
+.upload-area {
     padding: 30px;
     border-radius: 20px;
     width: 500px;
@@ -14,9 +18,23 @@
     margin-bottom: 20px;
 }
 
+.scan-button-container {
+    padding: 20px;
+}
+
 .scan-button {
     color: #434343 !important;
     background-color: #fa8900 !important;
-    font-size: 24px !important;
+    font-size: 20px !important;
     text-transform: none !important;
+    border-radius: 16px !important;
+    border: none;
+}
+
+.scan-button:hover {
+    color: #ffffff !important;
+    background-color: #fa8900 !important;
+    font-size: 20px !important;
+    text-transform: none !important;
+    border-radius: 16px !important;
 }

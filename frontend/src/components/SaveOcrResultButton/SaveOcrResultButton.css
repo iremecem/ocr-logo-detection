@@ -1,0 +1,23 @@
+.p-dropdown {
+    border-color: #fa8900 !important;
+    border-width: 2px !important;
+    box-shadow: none !important;
+    border-radius: 10px !important;
+    width: 250px !important;
+    text-align: center !important;
+    margin: 16px;
+}
+
+.p-dropdown-trigger {
+    color: #fa8900 !important;
+}
+
+.p-dropdown-label {
+    color: #fa8900 !important;
+    border-color: #fa8900 !important;
+    font-weight: bold !important;
+}
+
+.p-dropdown-panel {
+    border-radius: 10px !important;
+}

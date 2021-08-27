@@ -9,7 +9,6 @@ export default class ScanMailPage extends Component {
         return (
             <div className="container">
                 <UploadImage/>
-                <OcrResultSkeleton/>
             </div>
         )
     }

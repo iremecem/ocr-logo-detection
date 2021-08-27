@@ -1,0 +1,36 @@
+.display-linebreak {
+    white-space: pre-line;
+}
+
+.result-elements {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options-container {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.image {
+    height: 100%;
+}
+
+.image-container {
+    height: 500px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ocr-text-container {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
