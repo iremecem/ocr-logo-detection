@@ -1,9 +1,20 @@
-.display-linebreak {
+.ocr-header {
+    font-size: 1.4rem;
+}
+
+.header-divider {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-top-color: #43434343;
+    width: 80%;
+}
+
+.ocr-result {
     white-space: pre-line;
 }
 
 .result-elements {
-    padding-top: 60px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-evenly;
 }
@@ -16,10 +27,16 @@
 }
 
 .image {
-    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.results-column {
+    width: 600px;
 }
 
 .image-container {
+    width: 600px;
     height: 500px;
     position:relative;
     display:flex;
@@ -27,10 +44,21 @@
     align-items:center;
 }
 
-.ocr-text-container {
+.ocr-result-container {
     position:relative;
-    display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.logo-result-container {
+    margin-bottom: 50px;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.save-button {
+    margin-top: 25px;
+    
 }
 

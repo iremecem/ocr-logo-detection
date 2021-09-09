@@ -18,21 +18,21 @@ export default class SaveOcrResultButton extends Component {
                 extension: '.txt',
                 type: 'text/plain',
             },
-            {
-                label: 'Portable Document (pdf)',
-                extension: '.pdf',
-                type: 'application/pdf'
-            },
+            // {
+            //     label: 'Portable Document (pdf)',
+            //     extension: '.pdf',
+            //     type: 'application/pdf'
+            // },
             {
                 label: 'Microsoft Word (docx)',
                 extension: '.docx',
                 type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
             },
-            {
-                label: 'OpenOffice (odf)',
-                extension: '.odf',
-                type: 'application/vnd.oasis.opendocument.text'
-            },
+            // {
+            //     label: 'OpenOffice (odf)',
+            //     extension: '.odf',
+            //     type: 'application/vnd.oasis.opendocument.text'
+            // },
         ];
 
         this.state = {
@@ -49,10 +49,10 @@ export default class SaveOcrResultButton extends Component {
         // const data = new Blob(["fghhkjg"], {type: fileType})
         // URL.revokeObjectURL(this.state.downloadLink)
         // this.setState({downloadLink: URL.createObjectURL(data)})
-
+        var fileName = this.props.fileName.split('.')[0]
         
-        var data = new Blob(["fghhkjg gdgfd gsg gfd ggfgzs f gfd"], {type: fileType})
-        FileSaver.saveAs(data, "filename" + fileExtension);
+        var data = new Blob([this.props.ocrResult], {type: fileType})
+        FileSaver.saveAs(data, fileName + "-ocr-result" + fileExtension);
         // console.log(data)
         // var downloadURL = (window.URL || window.webkitURL).createObjectURL(data)
         // var name = "ocrresult" + fileExtension

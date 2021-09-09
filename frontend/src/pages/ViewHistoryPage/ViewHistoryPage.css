@@ -1,0 +1,21 @@
+.history-page {
+    padding: 40px;
+}
+
+.mail-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    /* white-space: pre-line; */
+}
+
+.image-preview {
+    width: 100px;
+    height: 100px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}

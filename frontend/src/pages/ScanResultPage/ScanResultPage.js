@@ -11,6 +11,7 @@ import { ButtonItems } from './ButtonItems'
 import './ScanResultPage.css'
 
 import SaveOcrResultButton from '../../components/SaveOcrResultButton/SaveOcrResultButton.js'
+import LogoResultSkeleton from '../../components/LogoResultSkeleton/LogoResultSkeleton';
 
 export default class ScanResultPage extends Component {
 
@@ -21,40 +22,13 @@ export default class ScanResultPage extends Component {
         this.state = {
             file: this.props.location.state.file,
             preview: URL.createObjectURL(this.props.location.state.file),
-            result: "",
+            ocrResult: "",
             downloadLink: "",
             downloadName: "",
             downloadType: "",
+            companyName: "",
+            logoImage: ""
         }
-
-        this.items = [{
-            label: 'Plain Text (txt)',
-            icon: 'pi pi-refresh',
-            command: () => {
-                this.toast.show({severity:'success', summary:'Updated', detail:'Data Updated'});
-            }
-        },
-        {
-            label: 'Portable Document (pdf)',
-            icon: 'pi pi-times',
-            command: () => {
-                this.toast.show({ severity: 'success', summary: 'Delete', detail: 'Data Deleted' });
-            }
-        },
-        {
-            label: 'Microsoft Word (docx)',
-            icon: 'pi pi-refresh',
-            command: () => {
-                this.toast.show({severity:'success', summary:'Updated', detail:'Data Updated'});
-            }
-        },
-        {
-            label: 'OpenOffice (odf)',
-            icon: 'pi pi-refresh',
-            command: () => {
-                this.toast.show({severity:'success', summary:'Updated', detail:'Data Updated'});
-            }
-        }];
     }
 
     componentDidMount() {
@@ -72,64 +46,68 @@ export default class ScanResultPage extends Component {
           .then((response) => {
             console.log(response.data);
             let ocrResult = response.data;
-            this.setState({ result: response.data})
+            this.setState({ ocrResult: response.data})
           })
           .catch(error => {
               console.log(error);
-          }).then(() => {
-              let data = {"4": "bu company",
-                          "3": this.state.result}
-              axios.post("https://api.jotform.com/form/212221991729054/submissions?apikey=589e0c84d66ed72d07f81a78e3153916", data)
           })
+          .then(() => {
+            axios.post('http://127.0.0.1:8000/logo/', fd, config)
+            .then((response) => {
+                console.log(response.data);
+                this.setState({logoImage: response.data.image, companyName: response.data.company_name});
+            })
+            .catch(error => {
+                console.log(error);
+            })
+            .then(() => {
+
+                let data = {"3": this.state.companyName,
+                            "4": this.state.ocrResult,
+                            "5": this.state.logoImage}
+
+                axios.post("https://api.jotform.com/form/212441982728057/submissions?apikey=589e0c84d66ed72d07f81a78e3153916", data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+          })
+          
     }
 
-
-    createTxtFile = () => {
-        const data = new Blob([this.state.result], {type: 'text/plain'})
-        URL.revokeObjectURL(this.state.downloadLink)
-        this.setState({downloadLink: URL.createObjectURL(data)})
-        console.log(this.state.downloadLink)
-    }
-
-    createWordxFile = () => {
-        const data = new Blob([this.state.result], {type: 'application/msword'})
-        URL.revokeObjectURL(this.state.downloadLink)
-        this.setState({downloadLink: URL.createObjectURL(data)})
-        console.log(this.state.downloadLink)
-    }
-
-    createWordFile = () => {
-        const data = new Blob([this.state.result], {type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'})
-        URL.revokeObjectURL(this.state.downloadLink)
-        this.setState({downloadLink: URL.createObjectURL(data)})
-        console.log(this.state.downloadLink)
-    }
-
-    
 
     render() {
+
+        var logoImage = 'data:image/jpeg;base64,' + this.state.logoImage
+
         return (
             <div className="result-page-container">
                 <div className="result-elements">
                     <div className="image-container">
-                        <img className="image"
+                        {this.state.logoImage ? <img className="image"
                             alt="image"
-                            src={this.state.preview}
-                        />
+                            src={logoImage}
+                        /> : <img className="image"
+                        alt="image"
+                        src={this.state.preview}
+                    />}
+                        
                     </div>
-                    <div className="options-container">
-                        <div>
-                        <SaveOcrResultButton/>
-                        <SaveOcrResultButton/>
-                        <SaveOcrResultButton/>
+                    <div className="results-column">
+                        <div className="logo-result-container">
+                            <div className="ocr-header">Company Name</div>
+                            <hr className="header-divider"></hr>
+                            {this.state.companyName ? <div> {this.state.companyName}</div> : <LogoResultSkeleton/>}
+                        </div>
+                        <div className="ocr-result-container">
+                            <div className="ocr-header">Mail Content</div>
+                            <hr className="header-divider"></hr>
+                            {this.state.ocrResult ? <div className="ocr-result">{this.state.ocrResult}</div> : <OcrResultSkeleton/>}
+                            <div className="save-button"> 
+                                <SaveOcrResultButton ocrResult={this.state.ocrResult} fileName={this.state.file.name}/>
+                            </div>
                         </div>
                     </div>
-                    <div className="ocr-text-container">
-                        {this.state.result ? <div className="display-linebreak">{this.state.result}</div> : <OcrResultSkeleton/>}
-                    </div>
-                {/* <Button onClick={this.createWordFile}>lele</Button>
-                <a download='lele.docx' href={this.state.downloadLink}>link is here</a> */}
-                
                 </div>
             </div>
         )

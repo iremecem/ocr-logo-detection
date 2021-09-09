@@ -63,7 +63,7 @@ def get_textv2(img):
     result = pytesseract.image_to_string(Image.open("thres.png"), config=custom_config)
     os.remove("thres.png")
 
-    checker = SpellChecker()
+    checker = SpellChecker(language="en")
     all_words = checker.split_words(result)
 
     misspelled_words = list(checker.unknown(all_words))
@@ -74,9 +74,7 @@ def get_textv2(img):
         result = insensitive_word.sub('', result)
 
     return result.strip()
-
-
-
+    
 class OCR():
     def __init__(self, img_path):
         self.img_path = img_path
@@ -88,17 +86,17 @@ class OCR():
     def clear_workspace(self):
         os.system('rm line_box*')
 
-if __name__ == '__main__':
-    from sys import argv
+# if __name__ == '__main__':
+#     from sys import argv
 
-    if len(argv)<2:
-        print("Usage: python image-to-text.py relative-filepath")
-    else:
-        print('--- Start recognize text from image ---')
-        for i in range(1,len(argv)):
-            print(argv[i])
-            print(get_text(argv[i]))
-            print()
-            print()
+#     if len(argv)<2:
+#         print("Usage: python image-to-text.py relative-filepath")
+#     else:
+#         print('--- Start recognize text from image ---')
+#         for i in range(1,len(argv)):
+#             print(argv[i])
+#             print(get_text(argv[i]))
+#             print()
+#             print()
 
-        print('------ Done -------')
+#         print('------ Done -------')

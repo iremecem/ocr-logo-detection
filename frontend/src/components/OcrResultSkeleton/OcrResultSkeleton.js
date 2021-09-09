@@ -7,24 +7,24 @@ import './OcrResultSkeleton.css'
 export default class OcrResultSkeleton extends Component {
     render() {
         return (
-            <div style={{marginLeft: '50px', marginTop: '50px'}}>
-                <Skeleton className="skeleton" width="200px" borderRadius="16px"></Skeleton>
+            <div>
+                <Skeleton className="skeleton" width="45%" borderRadius="16px"></Skeleton>
                 <br/>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="260px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton"width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="300px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="240px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="52%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="52%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="52%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton"width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="60%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="50%" borderRadius="16px"></Skeleton>
                 <br/>
-                <Skeleton className="skeleton" width="200px" borderRadius="16px"></Skeleton>
-                <Skeleton className="skeleton" width="160px" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="45%" borderRadius="16px"></Skeleton>
+                <Skeleton className="skeleton" width="40%" borderRadius="16px"></Skeleton>
             </div>
         )
     }

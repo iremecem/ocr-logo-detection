@@ -96,7 +96,7 @@ export default function UploadImage(props) {
             <div className="ln-selection-container">
             </div>
             <div className="scan-button-container">
-                <Button className="scan-button" onClick={handleClick}>Scan Document</Button>
+                <Button className="scan-button" onClick={handleClick}>Scan Mail</Button>
             </div>
             <aside>
                 {thumbs}
