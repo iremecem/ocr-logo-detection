@@ -435,9 +435,15 @@ void draw_detections_v3(image im, detection *dets, int num, float thresh, char *
                 char labelstr[4096] = { 0 };
                 // comment out
                 strcat(labelstr, names[selected_detections[i].best_class]);
+<<<<<<< HEAD
                 // char prob_str[10];
                 // sprintf(prob_str, ": %.2f", selected_detections[i].det.prob[selected_detections[i].best_class]);
                 // strcat(labelstr, prob_str);
+=======
+                char prob_str[10];
+                sprintf(prob_str, ": %.2f", selected_detections[i].det.prob[selected_detections[i].best_class]);
+                strcat(labelstr, prob_str);
+>>>>>>> a0162646a98be8bd3c163de30c266abb06130f43
                 int j;
                 // comment out
                 for (j = 0; j < classes; ++j) {
