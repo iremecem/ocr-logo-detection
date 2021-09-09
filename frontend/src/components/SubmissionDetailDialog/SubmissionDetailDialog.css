@@ -1,0 +1,85 @@
+.dialog-content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.ocr-header {
+    font-size: 1.4rem;
+}
+
+.header-divider-2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-top-color: #43434343;
+    width: 100%
+}
+
+.ocr-result {
+    white-space: pre-line;
+}
+
+.result-elements {
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.options-container {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.results-column {
+    width: 600px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.image-container {
+    width: 600px;
+    height: 500px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ocr-result-container {
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.logo-result-container {
+    margin-bottom: 50px;
+    position:relative;
+    justify-content:center;
+    align-items:center;
+}
+
+.save-button-2 {
+    margin-top: 25px;
+}
+
+.ocr-result-text {
+    white-space: pre-line;
+}
+
+.mail-image {
+    margin-right: 100px;
+    width: 500px;
+    height: 500px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+

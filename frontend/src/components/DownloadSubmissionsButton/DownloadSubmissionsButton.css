@@ -1,0 +1,28 @@
+.download-link {
+    text-decoration: none;
+}
+
+.download-button-container {
+    padding: 20px 20px 20px 0
+}
+
+.download-button {
+    color: #ffffff !important;
+    background-color: #01bd6f !important;
+    font-size: 18px !important;
+    text-transform: none !important;
+    border-radius: 4px !important;
+    border: none !important;
+    padding-right: 25px !important;
+    padding-left: 25px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.download-button:hover {
+    color: #ffffff !important;
+    background-color: #01bd6fbd !important;
+    font-size: 18px !important;
+    text-transform: none !important;
+    /* border-radius: 16px !important; */
+}

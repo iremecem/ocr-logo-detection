@@ -1,0 +1,9 @@
+[
+{
+ "frame_id":1, 
+ "filename":"/Users/ecem/Downloads/Fake-paypal.jpg", 
+ "objects": [ 
+  {"class_id":18, "name":"paypal-text", "relative_coordinates":{"center_x":0.142495, "center_y":0.099280, "width":0.218058, "height":0.103136}, "confidence":0.862081}
+ ] 
+}
+]

@@ -1,0 +1,9 @@
+[
+{
+ "frame_id":1, 
+ "filename":"/Users/ecem/Desktop/ocr-logo-detection/backend/images/157fd41c-7666-45c1-907f-54fc8b959a35.jpeg", 
+ "objects": [ 
+  {"class_id":18, "name":"paypal-text", "relative_coordinates":{"center_x":0.142495, "center_y":0.099280, "width":0.218058, "height":0.103136}, "confidence":0.862081}
+ ] 
+}
+]
